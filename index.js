@@ -38,7 +38,7 @@ function generateMsg() {
             break;
         case "option5":
             // Option 5: Incorrect Packstation number
-            finalMsg += "Ihre Packstation-Nummer ist nicht korrekt. Bitte überprüfe und Sende uns ggf. die korrigierte Packstation, falls Du dich verschrieben hast.";
+            finalMsg += "Deine Packstation-Nummer ist nicht korrekt. Bitte überprüfe und sende uns ggf. die korrigierte Packstation, falls Du dich verschrieben hast.";
             break;
         case "option6":
             // Option 6: Invalid Postnummer

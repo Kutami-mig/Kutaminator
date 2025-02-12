@@ -16,25 +16,27 @@ function generateMsg() {
     // Use a switch statement for cleaner conditional logic
     switch (selectedOption.id) {
         case "option1":
-            // Option 1: Pre-defined message for missing items
-            finalMsg += `Der Artikel ${missingItem} (${quantityOfItems} Stück) ist aktuell nicht auf Lager. Dieser ist bereits beim Hersteller nachbestellt und sollte in den nächsten Tagen eintreffen.`;
+            // Option 1: Pre-defined message for missing items already ordered from the manufacturer
+            finalMsg += `Der Artikel ${missingItem} (${quantityOfItems} Stück) ist aktuell nicht auf Lager. Dieser ist bereits beim Hersteller nachbestellt und sollte 
+            in den nächsten Tagen eintreffen. Bei manchen Herstellern beträgt die Lieferzeit jedoch mehrere Wochen. Wenn Du deine Lieferung dringend benötigst, schreib 
+            uns gerne eine Email.`;
             break;
         case "option2":
-            // Option 2: Includes instructions for partial delivery or cancellation
-            finalMsg += `Der Artikel ${missingItem} (${quantityOfItems} Stück) ist aktuell nicht auf Lager. Dieser wird in den nächsten Tagen beim Hersteller nachbestellt.<br><br>
-                        Möchtest Du den lieferbaren Rest deines Auftrages zugeschickt bekommen (Teillieferung)?<br>
-                        Alternativ kannst Du dir einen anderen Artikel aus unserem Sortiment aussuchen oder den fehlenden Artikel stornieren.<br><br>
-                        Bitte schreibe uns dazu eine Email.`;
+            // Option 2: Pre-defined message for missing items NOT yet ordered from the manufacturer + additional comment
+            finalMsg += `Der Artikel ${missingItem} (${quantityOfItems} Stück)  ist aktuell nicht auf Lager. Dieser wird in den nächsten Tagen beim Hersteller nachbestellt. 
+            Möchtest Du den lieferbaren Rest deines Auftrages zugeschickt bekommen (Teillieferung)?
+            Alternativ kannst Du dir einen anderen Artikel aus unserem Sortiment aussuchen oder den fehlenden Artikel stornieren. Bitte schreibe uns dazu eine Email.`;
             break;
         case "option3":
             // Option 3: Message for discontinued products
-            finalMsg += `Der Artikel ${missingItem} (${quantityOfItems} Stück) ist aktuell nicht auf Lager. Dieser wird beim Hersteller nicht mehr nachproduziert.<br>
-                        Bitte suche dir einen anderen Artikel aus unserem Sortiment aus.`;
+            finalMsg += `Der Artikel ${missingItem} (${quantityOfItems} Stück) ist leider nicht auf Lager. Dieser wird beim Hersteller nicht mehr nachproduziert oder 
+            wird bei uns in Zukunft nicht mehr lagernd sein. Daher werden wir den Artikel nicht nachbestellen bzw. nicht nachbestellen können. Bitte suche dir einen 
+            anderen Artikel aus unserem Sortiment aus, alternativ kannst Du den Artikel stornieren.`;
             break;
         case "option4":
             // Option 4: Address missing
-            finalMsg += `Aktuell fehlt uns der Straßenname / die Hausnummer, um dein Paket versenden zu können.
-                        Bitte schreibe uns eine Mail (Du kannst auf diese Mail antworten) mit der Adresse, an die dein Paket versendet.`;
+            finalMsg += `Aktuell fehlt uns der Straßenname / die Hausnummer, um dein Paket versenden zu können. Bitte schreibe uns eine Mail (Du kannst auf diese Mail 
+            antworten) mit der Adresse, an die dein Paket versendet werden soll.`;
             break;
         case "option5":
             // Option 5: Incorrect Packstation number
@@ -42,13 +44,14 @@ function generateMsg() {
             break;
         case "option6":
             // Option 6: Invalid Postnummer
-            finalMsg += `Laut DHL ist deine Postnummer nicht registriert. Bitte überprüfe, ob die Postnummer wirklich zur Packstation gehört, und ob Du den letzten Schritt der Registrierung abgeschlossen hast. 
-                        Sende uns ggf. die korrigierte Postnummer, falls Du dich verschrieben hast.`;
+            finalMsg += `Laut DHL ist deine Postnummer nicht registriert. Bitte überprüfe, ob die Postnummer wirklich zur Packstation gehört, und ob Du den letzten 
+            Schritt der Registrierung abgeschlossen hast. Sende uns ggf. die korrigierte Postnummer, falls Du dich verschrieben hast.`;
             break;
         case "option7":
             // Option 7: Scheduled shipping
-            finalMsg += `Dein Paket wird wie gewünscht zum ___ versendet. Das Label ist schon gedruckt, daher hast Du bereits eine Sendungsverfolgungs-Nr. und die Versand-Email erhalten.
-                        Wir legen dein Paket aber erst zum gewünschten Datum auf den Versandwagen.`;
+            finalMsg += `Dein Paket wird wie gewünscht zum ___ versendet. Das Label ist schon gedruckt, daher hast Du bereits eine Sendungsverfolgungs-Nr. und die 
+            Versand-Email erhalten.
+            Wir legen dein Paket aber erst zum gewünschten Datum auf den Versandwagen.`;
             break;
         default:
             // Handle invalid or unselected options
